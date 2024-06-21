@@ -40,14 +40,17 @@ pipeline{
                     echo "Process command"
                     ps -ef
                     '''
-                }
-                stage('Hostname'){
+                } 
+            }
+
+            stage('Hostname'){
                 steps{
                     sh '''
                     echo "hostname"
                     hostname
                     '''
                 }
+            }
                 stage('Path Details'){
                 steps{
                     sh '''
