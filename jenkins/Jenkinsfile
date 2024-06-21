@@ -33,6 +33,29 @@ pipeline{
                     df -kh
                     '''
                 }
-            } 
+            }
+                 stage('Build-Process command'){
+                steps{
+                    sh '''
+                    echo "Process command"
+                    ps -ef
+                    '''
+                }
+                stage('Hostname'){
+                steps{
+                    sh '''
+                    echo "hostname"
+                    hostname
+                    '''
+                }
+                stage('Path Details'){
+                steps{
+                    sh '''
+                    echo "path"
+                    pwd
+                    '''
+                }
+            }
+
         }
 }
