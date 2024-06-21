@@ -25,6 +25,14 @@ pipeline{
                     lscpu
                     '''
                 }
+            }
+            stage('Build-Disk details'){
+                steps{
+                    sh '''
+                    echo "Disk Details"
+                    df -kh
+                    '''
+                }
             } 
         }
 }
