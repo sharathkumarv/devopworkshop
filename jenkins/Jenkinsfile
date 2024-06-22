@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent{
+        label 'dev'
+    }
     
         stages{
             stage('Build-System details'){
@@ -17,32 +19,7 @@ pipeline{
                     free -h
                     '''
                 }
-            }
-            stage('Build-CPU details'){
-                steps{
-                    sh '''
-                    echo "CPU DETAILS"
-                    lscpu
-                    '''
-                }
-            }
-            stage('Build-Disk details'){
-                steps{
-                    sh '''
-                    echo "Disk Details"
-                    df -kh
-                    '''
-                }
-            }
-                 stage('Build-Process command'){
-                steps{
-                    sh '''
-                    echo "Process command"
-                    ps -ef
-                    '''
-                } 
-            }
-
+            }  
             stage('Hostname'){
                 steps{
                     sh '''
